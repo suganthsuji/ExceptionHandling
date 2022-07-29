@@ -11,24 +11,11 @@ public class MoodAnalyzerMain {
         String mood = sc.nextLine();
 
         //MoodAnalyse Object
-        MoodAnalyzerMain moodAnalyzer=new MoodAnalyzerMain();
+        MoodAnalyser moodAnalyzer=new MoodAnalyser(mood);
 
-        System.out.println(moodAnalyzer.analyseMood(mood));
+        System.out.println(moodAnalyzer.analyseMood());
     }
 
-    //To analyse Mood Happy or Sad
 
-    public String analyseMood(String msg){
-
-       if(msg.equals("I am in Sad Mood")){
-           return "Sad";
-       }
-       else if(msg.equals("I am in ANY Mood")){
-           return "Happy";
-       }
-
-        return "No Mood";
-
-    }
 
 }
