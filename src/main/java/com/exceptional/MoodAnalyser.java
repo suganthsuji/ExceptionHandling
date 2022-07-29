@@ -13,14 +13,25 @@ public class MoodAnalyser {
 
     public String analyseMood(){
 
-        if(this.mood.equals("I am in Sad Mood")){
-            return "Sad";
-        }
-        else if(this.mood.equals("I am in ANY Mood")){
-            return "Happy";
-        }
+        String mood="";
 
-        return "No Mood";
+        //Using try catch to analyse the mood
+        try {
+            if (this.mood.equals("I am in Sad Mood")) {
+                mood= "Sad";
+            } else if (this.mood.equals("I am in ANY Mood")) {
+                mood="Happy";
+            }
+            else{
+                throw new MoodAnalysisException("Im Happy");
+            }
+        }
+        catch(Exception e){
+
+            System.out.println(e);
+
+        }
+        return mood;
 
     }
 
